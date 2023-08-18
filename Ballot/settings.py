@@ -27,7 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+         'rest_framework.permissions.AllowAny',
+    ]
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,8 +46,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'base'
 
-    'rest_framework.authtoken'
+    # 'rest_framework.authtoken'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
